@@ -9,7 +9,7 @@ export default function Contact() {
     <section id="contact" className="border-t border-line">
       <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
         <Reveal>
-          <p className="font-mono text-xs text-copper">05</p>
+          <p className="font-mono text-xs text-copper">06</p>
           <h2 className="mt-3 max-w-3xl font-display text-4xl font-bold tracking-[-0.03em] sm:text-6xl">
             Let&apos;s build something good<span className="text-copper">.</span>
           </h2>
