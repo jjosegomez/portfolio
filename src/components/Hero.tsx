@@ -59,7 +59,7 @@ export default function Hero() {
           </h1>
 
           <p className="rise d4 mt-6 max-w-xl font-display text-lg font-medium tracking-tight text-muted sm:text-xl">
-            Full-stack apps, AI products, and finance systems at enterprise scale.
+            AI-first solutions and full-stack platforms — designed, built, and shipped.
           </p>
 
           <p className="rise d5 mt-6 max-w-lg text-[15px] leading-relaxed text-muted">

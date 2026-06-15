@@ -4,7 +4,7 @@
 export const profile = {
   name: "Juan Gomez",
   role: "Software Engineer",
-  meta: "Full-stack · AI · Finance Systems",
+  meta: "AI-first · Full-stack · Platforms",
   location: "Tampa, FL",
   email: "hi@techbyjuan.com",
   links: {
