@@ -7,7 +7,6 @@ export const profile = {
   meta: "Full-stack · AI · Finance Systems",
   location: "Tampa, FL",
   email: "hi@techbyjuan.com",
-  available: true,
   links: {
     github: "https://github.com/jjosegomez",
     linkedin: "https://www.linkedin.com/in/jjgomezswe/",

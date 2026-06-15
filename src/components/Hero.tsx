@@ -43,14 +43,8 @@ export default function Hero() {
     >
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16">
         <div>
-          <p className="rise d1 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-muted">
+          <p className="rise d1 font-mono text-xs uppercase tracking-[0.18em] text-muted">
             Software Engineer — {profile.location}
-            {profile.available && (
-              <span className="inline-flex items-center gap-1.5 text-ink">
-                <span className="h-1.5 w-1.5 rounded-full bg-copper" />
-                Available
-              </span>
-            )}
           </p>
 
           <h1 className="mt-6 font-display text-5xl font-bold leading-[0.98] tracking-[-0.03em] sm:text-6xl lg:text-7xl">
