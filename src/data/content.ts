@@ -6,7 +6,7 @@ export const profile = {
   role: "Software Engineer",
   meta: "Full-stack · AI · Finance Systems",
   location: "Tampa, FL",
-  email: "jjgomezswe@gmail.com",
+  email: "hi@techbyjuan.com",
   available: true,
   links: {
     github: "https://github.com/jjosegomez",
