@@ -5,13 +5,12 @@
 
 ## Current state
 - Full redesign on branch **`feat/redesign-2026`** (committed): light/copper "engineering-paper" theme, résumé-grounded content, "Interactive System" motion — ⌘K command palette, scroll progress + section minimap, count-ups, kinetic hero (word reveal + copper underline draw + portrait parallax), View-Transition project expand, marquee Stack, cursor glow.
-- Deployed to **CF Pages PREVIEW**: https://redesign-preview.techbyjuan.pages.dev
-- ⚠️ **Production `techbyjuan.com` still serves the OLD build** — redesign NOT promoted yet (awaiting Juan's OK).
+- ✅ **LIVE on production**: https://techbyjuan.com (promoted 2026-06-15 via `wrangler ... --branch main`; verified HTTP 200, old build gone). `main` fast-forwarded to the redesign + pushed to origin. Preview alias: https://redesign-preview.techbyjuan.pages.dev
 - Hosting moved off Netlify → Cloudflare Pages (domain was locked to an old personal Netlify account). See memory `reference_techbyjuan_hosting`.
 
 ## What's next
-1. Juan OK → **promote to production**: `npm run build && npx wrangler pages deploy out --project-name techbyjuan --branch main`, then merge `feat/redesign-2026`.
-2. Add **Microsoft experience** (awaiting Juan: program/role + dates) next to GDSC in `src/data/content.ts`.
+1. ✅ DONE — promoted to production 2026-06-15.
+2. Add **Microsoft experience** (awaiting Juan: program/role + dates) next to GDSC in `src/data/content.ts`, then redeploy.
 3. **v2 (later, behind Trinity):** personal-brand "Work with me" + `/writing` section — see `~/Documents/GitHub/TechByJuan/`.
 
 ## Known tech debt
