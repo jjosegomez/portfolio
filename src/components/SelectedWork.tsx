@@ -90,7 +90,7 @@ export default function SelectedWork() {
   return (
     <Section
       id="work"
-      index="02"
+      index="01"
       title="Selected Work"
       intro="A few things I've designed and built — from a production AI legal platform to shipped products and client sites. Select a project to expand."
     >

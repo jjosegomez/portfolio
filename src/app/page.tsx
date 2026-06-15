@@ -26,10 +26,10 @@ export default function Home() {
       <ScrollProgress />
       <main>
         <Hero />
-        <Stack />
         <SelectedWork />
         <Archive />
         <Experience />
+        <Stack />
         <About />
         <WorkWithMe />
       </main>

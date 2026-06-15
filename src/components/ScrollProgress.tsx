@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 const TARGETS: [string, string][] = [
   ["top", "Top"],
-  ["stack", "Stack"],
   ["work", "Work"],
   ["experience", "Experience"],
+  ["stack", "Stack"],
   ["about", "About"],
   ["hire", "Let's work together"],
 ];

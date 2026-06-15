@@ -7,7 +7,7 @@ export default function Stack() {
   return (
     <Section
       id="stack"
-      index="01"
+      index="03"
       title="Stack"
       intro="What I build with — agentic AI and full-stack delivery, on top of the data layer."
     >

@@ -189,7 +189,7 @@ export const services = {
 
 export const nav = [
   { label: "Work", href: "#work" },
-  { label: "Stack", href: "#stack" },
   { label: "Experience", href: "#experience" },
+  { label: "Stack", href: "#stack" },
   { label: "About", href: "#about" },
 ];

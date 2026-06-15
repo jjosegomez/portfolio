@@ -4,7 +4,7 @@ import { experience } from "@/data/content";
 
 export default function Experience() {
   return (
-    <Section id="experience" index="03" title="Experience">
+    <Section id="experience" index="02" title="Experience">
       <div>
         {experience.map((job, i) => (
           <Reveal key={job.company} delay={((i % 3) + 1) as 1 | 2 | 3}>
