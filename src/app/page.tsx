@@ -1,25 +1,33 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import SkillsMarquee from "@/components/SkillsMarquee";
-import About from "@/components/About";
-import Building from "@/components/Building";
+import Stack from "@/components/Stack";
+import SelectedWork from "@/components/SelectedWork";
+import Archive from "@/components/Archive";
 import Experience from "@/components/Experience";
-import Projects from "@/components/Projects";
-import Footer from "@/components/Footer";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import RevealController from "@/components/RevealController";
+import ScrollProgress from "@/components/ScrollProgress";
+import CommandPalette from "@/components/CommandPalette";
+import CursorGlow from "@/components/CursorGlow";
 
 export default function Home() {
   return (
     <>
+      <CursorGlow />
       <Navbar />
+      <ScrollProgress />
       <main>
         <Hero />
-        <SkillsMarquee />
-        <About />
-        <Building />
+        <Stack />
+        <SelectedWork />
+        <Archive />
         <Experience />
-        <Projects />
+        <About />
+        <Contact />
       </main>
-      <Footer />
+      <RevealController />
+      <CommandPalette />
     </>
   );
 }

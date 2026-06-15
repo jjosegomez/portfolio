@@ -1,90 +1,118 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import { profile } from "@/data/content";
+import Counter from "./Counter";
+
 export default function Hero() {
+  const portraitRef = useRef<HTMLDivElement>(null);
+  const drawRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const id = setTimeout(() => drawRef.current?.classList.add("go"), 60);
+    const reduce =
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(pointer: coarse)").matches;
+    let raf = 0;
+    const onMove = (e: PointerEvent) => {
+      if (reduce) return;
+      const x = (e.clientX / window.innerWidth - 0.5) * 16;
+      const y = (e.clientY / window.innerHeight - 0.5) * 16;
+      if (!raf)
+        raf = requestAnimationFrame(() => {
+          raf = 0;
+          if (portraitRef.current)
+            portraitRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        });
+    };
+    window.addEventListener("pointermove", onMove, { passive: true });
+    return () => {
+      clearTimeout(id);
+      window.removeEventListener("pointermove", onMove);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  const dl = (i: number) => ({ animationDelay: `${i * 0.07}s` } as React.CSSProperties);
+
   return (
-    <section className="min-h-screen flex items-center relative overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-navy hidden lg:block" />
+    <section
+      id="top"
+      className="relative flex min-h-screen items-center overflow-hidden pt-24 pb-16"
+    >
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16">
+        <div>
+          <p className="rise d1 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-muted">
+            Software Engineer — {profile.location}
+            {profile.available && (
+              <span className="inline-flex items-center gap-1.5 text-ink">
+                <span className="h-1.5 w-1.5 rounded-full bg-copper" />
+                Available
+              </span>
+            )}
+          </p>
 
-      <div className="mx-auto max-w-6xl px-6 w-full relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left — Text */}
-          <div className="py-24 lg:py-0">
-            <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-4 animate-fade-up opacity-0">
-              Engineer & Builder
-            </p>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-navy leading-[1.05] mb-6 animate-fade-up opacity-0 delay-100">
-              Juan
-              <br />
-              Gomez
-              <span className="text-accent">.</span>
-            </h1>
-            <p className="text-lg text-text-muted max-w-lg mb-8 animate-fade-up opacity-0 delay-200">
-              Financial Systems Developer at Jabil by day.
-              <br />
-              Building AI-native software by night.
-              <br />
-              <span className="text-navy font-medium">Based in Tampa, FL.</span>
-            </p>
-            <div className="flex flex-wrap gap-4 animate-fade-up opacity-0 delay-300">
-              <a
-                href="#building"
-                className="bg-navy text-white px-6 py-3 rounded-md font-semibold hover:bg-navy-light transition-colors"
-              >
-                What I&apos;m Building
-              </a>
-              <a
-                href="https://www.linkedin.com/in/jjgomezswe/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-2 border-navy text-navy px-6 py-3 rounded-md font-semibold hover:bg-navy hover:text-white transition-all"
-              >
-                Get in Touch
-              </a>
-            </div>
+          <h1 className="mt-6 font-display text-5xl font-bold leading-[0.98] tracking-[-0.03em] sm:text-6xl lg:text-7xl">
+            <span className="word" style={dl(0)}>I&nbsp;</span>
+            <span className="word" style={dl(1)}>build&nbsp;</span>
+            <span ref={drawRef} className="word draw" style={dl(2)}>software</span>
+            <br />
+            <span className="word" style={dl(3)}>end&nbsp;</span>
+            <span className="word" style={dl(4)}>to&nbsp;</span>
+            <span className="word" style={dl(5)}>
+              end<span className="text-copper">.</span>
+            </span>
+          </h1>
 
-            {/* Quick stats */}
-            <div className="flex gap-8 mt-12 animate-fade-up opacity-0 delay-400">
-              <div>
-                <p className="text-3xl font-bold text-navy">3+</p>
-                <p className="text-sm text-text-muted">Years Building</p>
-              </div>
-              <div className="w-px bg-navy/20" />
-              <div>
-                <p className="text-3xl font-bold text-navy">2</p>
-                <p className="text-sm text-text-muted">Products Shipped</p>
-              </div>
-              <div className="w-px bg-navy/20" />
-              <div>
-                <p className="text-3xl font-bold text-navy">MS</p>
-                <p className="text-sm text-text-muted">CS @ Georgia Tech</p>
-              </div>
-            </div>
+          <p className="rise d4 mt-6 max-w-xl font-display text-lg font-medium tracking-tight text-muted sm:text-xl">
+            Full-stack apps, AI products, and the systems behind enterprise finance.
+          </p>
+
+          <p className="rise d5 mt-6 max-w-lg text-[15px] leading-relaxed text-muted">
+            I&apos;m a <span className="font-medium text-ink">Colombian-American engineer</span> in
+            Tampa. Sole engineer behind an{" "}
+            <span className="font-medium text-ink">AI-driven finance platform at Jabil</span> — and I
+            ship my own products on the side.{" "}
+            <span className="font-medium text-ink">M.S. CS @ Georgia Tech</span>, incoming.
+          </p>
+
+          <div className="rise d5 mt-9 flex flex-wrap items-center gap-3">
+            <a href="#work" className="rounded-md bg-copper px-5 py-3 font-mono text-xs uppercase tracking-wider text-oncopper transition-colors hover:bg-copper-strong">
+              View work →
+            </a>
+            <a href={profile.links.resume} className="rounded-md border border-line-strong px-5 py-3 font-mono text-xs uppercase tracking-wider text-ink transition-colors hover:border-ink">
+              Résumé
+            </a>
+            <a href={profile.links.github} target="_blank" rel="noopener noreferrer" className="rounded-md border border-line-strong px-5 py-3 font-mono text-xs uppercase tracking-wider text-ink transition-colors hover:border-ink">
+              GitHub
+            </a>
           </div>
 
-          {/* Right — Code card (on navy bg) */}
-          <div className="hidden lg:flex items-center justify-center">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-white w-full max-w-md">
-              <div className="font-mono text-sm space-y-3">
-                <p className="text-accent-light">// currently</p>
-                <p>
-                  <span className="text-white/60">role:</span>{" "}
-                  <span className="text-white">&quot;Financial Systems Developer II&quot;</span>
-                </p>
-                <p>
-                  <span className="text-white/60">company:</span>{" "}
-                  <span className="text-white">&quot;Jabil Inc&quot;</span>
-                </p>
-                <p>
-                  <span className="text-white/60">building:</span>{" "}
-                  <span className="text-accent-light">[&quot;ViGo Dental&quot;, &quot;Memex&quot;]</span>
-                </p>
-                <p>
-                  <span className="text-white/60">stack:</span>{" "}
-                  <span className="text-white">&quot;React, TypeScript, Python, AI&quot;</span>
-                </p>
-                <p className="text-white/40">
-                  <span className="animate-pulse">_</span>
-                </p>
-              </div>
+          <div className="rise d6 mt-9 flex flex-wrap gap-x-6 gap-y-1.5 font-mono text-xs text-muted">
+            <span><span className="text-ink"><Counter to={3} suffix="+" /></span> years building</span>
+            <span><span className="text-ink">Fortune-500</span> experience</span>
+          </div>
+        </div>
+
+        {/* Portrait — parallax wrapper + reveal inner */}
+        <div ref={portraitRef} className="relative mx-auto w-full max-w-xs will-change-transform lg:max-w-none">
+          <div className="rise d3 relative aspect-[4/5] overflow-hidden rounded-2xl border border-line bg-surface">
+            <span className="absolute left-3 top-3 z-10 rounded bg-bg/80 px-2 py-1 font-mono text-[10px] tracking-[0.1em] text-copper backdrop-blur">
+              JG · 2026
+            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/portrait.jpg"
+              alt="Juan Gomez"
+              width={760}
+              height={950}
+              className="h-full w-full object-cover"
+              loading="eager"
+              decoding="async"
+            />
+            <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/55 to-transparent px-3 py-2.5 font-mono text-[10px] uppercase tracking-[0.08em] text-white">
+              <span>Juan Gomez</span>
+              <span>Tampa, FL</span>
             </div>
           </div>
         </div>

@@ -1,40 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  /* Warm navy — pulled from the suit tones in both photos */
-  --navy: #1e1a3f;
-  --navy-light: #322b5e;
-  --navy-dark: #12102a;
-  /* Warm cream — matches the golden hour skin/shirt tones */
-  --cream: #faf7f2;
-  --warm-gray: #f0ebe3;
-  /* Rich amber gold — sampled from the golden hour lighting + Colombian sash */
-  --accent: #c48b2c;
-  --accent-light: #e4c478;
-  /* Forest green — from the headshot bokeh */
-  --green: #3d6b4f;
-  /* Warm text — purplish-gray instead of blue-gray */
-  --text: #2a2436;
-  --text-muted: #6e6478;
-  --background: var(--cream);
-  --foreground: var(--text);
+  /* Light "engineering paper" — warm off-white, never pure white */
+  --bg: oklch(0.976 0.008 92);
+  --surface: oklch(0.949 0.010 88);
+  --surface-2: oklch(0.928 0.012 86);
+  /* Warm near-black ink — never pure #000 */
+  --ink: oklch(0.245 0.015 58);
+  --muted: oklch(0.505 0.015 62);
+  /* Hairlines tinted warm */
+  --line: oklch(0.875 0.012 78);
+  --line-strong: oklch(0.80 0.014 70);
+  /* Single warm copper accent (~10% usage) */
+  --copper: oklch(0.575 0.12 48);
+  --copper-strong: oklch(0.49 0.12 46);
+  --oncopper: oklch(0.985 0.012 95);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-navy: var(--navy);
-  --color-navy-light: var(--navy-light);
-  --color-navy-dark: var(--navy-dark);
-  --color-cream: var(--cream);
-  --color-warm-gray: var(--warm-gray);
-  --color-accent: var(--accent);
-  --color-accent-light: var(--accent-light);
-  --color-text: var(--text);
-  --color-text-muted: var(--text-muted);
-  --color-green: var(--green);
-  --font-sans: var(--font-space-grotesk);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-copper: var(--copper);
+  --color-copper-strong: var(--copper-strong);
+  --color-oncopper: var(--oncopper);
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
 }
 
 html {
@@ -43,62 +39,128 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: var(--navy);
-  color: white;
+  background: var(--copper);
+  color: var(--oncopper);
 }
 
-/* Fade-in animation for sections */
-@keyframes fadeUp {
-  from {
+:where(a, button, [tabindex], input, textarea):focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ---- Motion (opt-in only when motion is allowed) ---- */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Default state = visible (no-JS / reduced-motion safe) */
+.rise, .reveal { opacity: 1; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
     opacity: 0;
-    transform: translateY(30px);
+    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+                transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
+  .reveal.in { opacity: 1; transform: none; }
+
+  .d1 { animation-delay: 0.06s; }
+  .d2 { animation-delay: 0.12s; }
+  .d3 { animation-delay: 0.18s; }
+  .d4 { animation-delay: 0.24s; }
+  .d5 { animation-delay: 0.30s; }
+  .d6 { animation-delay: 0.36s; }
+  .reveal.d1 { transition-delay: 0.06s; }
+  .reveal.d2 { transition-delay: 0.12s; }
+  .reveal.d3 { transition-delay: 0.18s; }
+  .reveal.d4 { transition-delay: 0.24s; }
+  .reveal.d5 { transition-delay: 0.30s; }
 }
 
-.animate-fade-up {
-  animation: fadeUp 0.6s ease-out forwards;
+/* Copper underline that draws on hover (links + project cards) */
+.link-underline {
+  background-image: linear-gradient(var(--copper), var(--copper));
+  background-size: 0% 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
+.link-underline:hover { background-size: 100% 1.5px; }
 
-/* Stagger delays */
-.delay-100 { animation-delay: 0.1s; }
-.delay-200 { animation-delay: 0.2s; }
-.delay-300 { animation-delay: 0.3s; }
-.delay-400 { animation-delay: 0.4s; }
+/* ───────────── Overdrive: interactive-system effects ───────────── */
 
-/* Marquee animation */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+main { position: relative; z-index: 1; }
 
-.animate-marquee {
-  animation: marquee 25s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
-/* Subtle grain texture overlay */
+/* Paper grain — subtle tactile depth */
 .grain::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.02;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  z-index: 9999;
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 40; opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+
+/* Cursor-follow copper glow (sits behind content, above bg) */
+.glow {
+  position: fixed; left: 0; top: 0; z-index: 0; pointer-events: none;
+  width: 560px; height: 560px; border-radius: 50%;
+  background: radial-gradient(circle, oklch(0.72 0.13 50 / 0.16), transparent 62%);
+  transform: translate3d(-50%, -50%, 0); will-change: transform; opacity: 0;
+  transition: opacity 0.5s ease;
+}
+@media (prefers-reduced-motion: reduce) { .glow { display: none; } }
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; height: 2px; z-index: 60;
+  background: var(--copper); width: var(--p, 0%); will-change: width;
+}
+
+/* Section minimap */
+.minimap { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 45; display: flex; flex-direction: column; gap: 13px; }
+.minimap button { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--line-strong); background: transparent; transition: transform 0.3s, background 0.3s, border-color 0.3s; cursor: pointer; }
+.minimap button.active { background: var(--copper); border-color: var(--copper); transform: scale(1.3); }
+
+/* Hero kinetic words */
+.word { display: inline-block; }
+@media (prefers-reduced-motion: no-preference) {
+  .word { opacity: 0; transform: translateY(0.6em); animation: rise 0.8s cubic-bezier(0.2, 0.85, 0.25, 1) forwards; }
+}
+
+/* Copper underline draw-in */
+.draw { background-image: linear-gradient(var(--copper), var(--copper)); background-repeat: no-repeat; background-position: 0 94%; background-size: 100% 3px; }
+@media (prefers-reduced-motion: no-preference) {
+  .draw { background-size: 0% 3px; transition: background-size 1s 0.55s cubic-bezier(0.2, 0.85, 0.25, 1); }
+  .draw.go { background-size: 100% 3px; }
+}
+
+/* Marquee (stack) */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.marquee-track { display: inline-flex; white-space: nowrap; animation: marquee 42s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+/* Project row copper sweep */
+.sweep::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, oklch(0.72 0.12 50 / 0.07)); opacity: 0; transition: opacity 0.4s; pointer-events: none; }
+.sweep:hover::before { opacity: 1; }
+
+/* Command palette */
+.cmdk-backdrop { position: fixed; inset: 0; z-index: 90; background: oklch(0.2 0.02 60 / 0.4); backdrop-filter: blur(4px); }
+@keyframes cmdk-in { from { opacity: 0; transform: translateY(-8px) scale(0.98); } to { opacity: 1; transform: none; } }
+.cmdk-panel { animation: cmdk-in 0.18s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+/* View Transition for project expand */
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.35s; }

@@ -1,42 +1,56 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const display = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const body = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Juan Gomez — Engineer & Builder",
-  description:
-    "Financial Systems Developer at Jabil. Building AI-native software on the side. Based in Tampa, FL.",
   metadataBase: new URL("https://techbyjuan.com"),
+  title: "Juan Gomez — Software Engineer",
+  description:
+    "Software engineer in Tampa building full-stack apps, AI products, and the systems behind enterprise finance — sole engineer behind a Fortune-500 finance org's first production AI agent.",
   openGraph: {
-    title: "Juan Gomez — Engineer & Builder",
+    title: "Juan Gomez — Software Engineer",
     description:
-      "Financial Systems Developer at Jabil. Building AI-native software on the side.",
-    type: "website",
+      "Full-stack · AI · finance systems. I build software end to end.",
     url: "https://techbyjuan.com",
+    type: "website",
+    images: ["/images/portrait.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Juan Gomez — Software Engineer",
+    description: "Full-stack · AI · finance systems. I build software end to end.",
+    images: ["/images/portrait.jpg"],
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${geistMono.variable} antialiased grain`}
+        className={`${display.variable} ${body.variable} ${mono.variable} antialiased grain`}
       >
         {children}
       </body>
