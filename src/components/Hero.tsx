@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { profile } from "@/data/content";
 import Counter from "./Counter";
 
@@ -100,17 +101,15 @@ export default function Hero() {
             <span className="absolute left-3 top-3 z-10 rounded bg-bg/80 px-2 py-1 font-mono text-[10px] tracking-[0.1em] text-copper backdrop-blur">
               JG · 2026
             </span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/portrait.jpg"
               alt="Juan Gomez"
               width={760}
               height={950}
+              priority
               className="h-full w-full object-cover"
-              loading="eager"
-              decoding="async"
             />
-            <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/55 to-transparent px-3 py-2.5 font-mono text-[10px] uppercase tracking-[0.08em] text-white">
+            <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/85 via-black/40 to-transparent px-3 py-3 font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-white">
               <span>Juan Gomez</span>
               <span>Tampa, FL</span>
             </div>
