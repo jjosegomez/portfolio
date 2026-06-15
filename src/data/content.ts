@@ -175,16 +175,17 @@ export const about = {
 export type Service = { title: string; detail: string };
 export const services = {
   kicker: "Work with me",
-  heading: "Need something built?",
+  heading: "I take on a few builds a year.",
   lead:
-    "Alongside my full-time work, I take on a few independent projects a year — the ones where the problem is interesting and I can own it end to end, from the data layer to the interface.",
+    "Work I can take end to end — from the data layer to the interface.",
   items: [
     { title: "AI & LLM products", detail: "Agents, RAG, and the eval harnesses that keep them honest." },
     { title: "Full-stack web apps", detail: "Next.js and FastAPI — designed, built, and deployed." },
-    { title: "Finance & data systems", detail: "Pipelines, dashboards, and reporting on Snowflake / SQL." },
-    { title: "0 → 1 MVPs", detail: "From a rough idea to a live, working product — fast." },
+    { title: "Finance & data systems", detail: "Pipelines, dashboards, and reporting you can trust — Snowflake / SQL." },
+    { title: "0 → 1 MVPs", detail: "From a rough idea to a deployed product real users can touch." },
   ] as Service[],
   cta: { label: "Start a project", subject: "Project inquiry — techbyjuan" },
+  availability: "Currently taking one or two new projects.",
 } as const;
 
 export const nav = [

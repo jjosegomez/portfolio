@@ -129,7 +129,8 @@ main { position: relative; z-index: 1; }
 }
 
 /* Section minimap */
-.minimap { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 45; display: flex; flex-direction: column; gap: 13px; }
+/* display is left to Tailwind's `hidden lg:flex` so the rail truly hides below lg */
+.minimap { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 45; flex-direction: column; gap: 13px; }
 .minimap button { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--line-strong); background: transparent; transition: transform 0.3s, background 0.3s, border-color 0.3s; cursor: pointer; }
 .minimap button.active { background: var(--copper); border-color: var(--copper); transform: scale(1.3); }
 

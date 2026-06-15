@@ -11,7 +11,7 @@ export default function WorkWithMe() {
           <p className="font-mono text-xs uppercase tracking-[0.12em] text-copper">
             05 · {services.kicker}
           </p>
-          <h2 className="mt-3 max-w-3xl font-display text-4xl font-bold tracking-[-0.03em] sm:text-6xl">
+          <h2 className="mt-3 max-w-3xl font-display text-4xl font-bold tracking-[-0.03em] sm:text-5xl">
             {services.heading}
           </h2>
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted">
@@ -46,7 +46,7 @@ export default function WorkWithMe() {
             {services.cta.label} →
           </a>
           <span className="font-mono text-[11px] text-muted">
-            Selective — usually one or two at a time.
+            {services.availability}
           </span>
         </Reveal>
       </div>
