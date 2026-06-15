@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { profile } from "@/data/content";
-import Counter from "./Counter";
 
 export default function Hero() {
   const portraitRef = useRef<HTMLDivElement>(null);
@@ -84,7 +83,7 @@ export default function Hero() {
           </div>
 
           <div className="rise d6 mt-9 flex flex-wrap gap-x-6 gap-y-1.5 font-mono text-xs text-muted">
-            <span><span className="text-ink"><Counter to={3} suffix="+" /></span> years building</span>
+            <span><span className="text-ink">3+</span> years building</span>
             <span><span className="text-ink">Fortune-500</span> experience</span>
           </div>
         </div>
