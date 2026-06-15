@@ -8,7 +8,7 @@ import { profile, services } from "@/data/content";
 const WEB3FORMS_KEY = "f08dd661-1be3-44f1-8b49-4b292630ff6f";
 // Optional booking link (Cal.com / Calendly). Empty = the "rather talk?" link
 // is hidden, so prod never shows a dead link.
-const BOOKING_URL = "";
+const BOOKING_URL = "https://cal.com/techbyjuan";
 
 type Status = "idle" | "sending" | "ok" | "error";
 
