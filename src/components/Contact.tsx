@@ -11,11 +11,11 @@ export default function Contact() {
         <Reveal>
           <p className="font-mono text-xs text-copper">06</p>
           <h2 className="mt-3 max-w-3xl font-display text-4xl font-bold tracking-[-0.03em] sm:text-5xl">
-            Let&apos;s build something good<span className="text-copper">.</span>
+            I&apos;m open to the right role<span className="text-copper">.</span>
           </h2>
           <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-muted">
-            Open to software engineering roles — full-stack, AI/LLM, or finance
-            systems. The fastest way to reach me is email — I read everything.
+            Full-stack, AI/LLM, or finance systems. The fastest way to reach me
+            is email — résumé and code are below.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a

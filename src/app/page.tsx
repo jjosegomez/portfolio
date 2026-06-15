@@ -15,6 +15,12 @@ import CursorGlow from "@/components/CursorGlow";
 export default function Home() {
   return (
     <>
+      <a
+        href="#work"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-copper focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:uppercase focus:tracking-wider focus:text-oncopper"
+      >
+        Skip to content
+      </a>
       <CursorGlow />
       <Navbar />
       <ScrollProgress />

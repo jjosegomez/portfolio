@@ -55,7 +55,7 @@ export const projects: Project[] = [
     name: "Mia Fit",
     role: "Design + Build",
     blurb:
-      "A headless e-commerce storefront — a custom Next.js front end on a headless commerce backend, with a full product catalog, variants, and cart. Designed and built from scratch.",
+      "A custom storefront on a headless commerce backend — full catalog, variants, and cart, designed and built end to end. Real products, real checkout, live in production.",
     tags: ["Next.js", "TypeScript", "Tailwind", "Headless commerce"],
     url: "https://miafit-store.netlify.app",
     highlights: [
@@ -83,7 +83,7 @@ export const projects: Project[] = [
     name: "Vilar Safety",
     role: "Design → Build → Deploy",
     blurb:
-      "Brand and marketing site for a safety-consulting business — design, build, and deploy, with a working contact pipeline wired to email.",
+      "Brand, marketing site, and a contact pipeline wired straight to the owner's inbox — for a safety-consulting business. Shipped on its own domain.",
     tags: ["Next.js", "Tailwind", "Forms"],
     url: "https://vilarsafetyconsulting.com",
     highlights: [
@@ -168,7 +168,7 @@ export const about = {
   lead:
     "I'm Juan — a Colombian-American software engineer in Tampa. I like building things end to end: the data underneath, the AI in the middle, and the interface people actually touch.",
   body:
-    "Right now I'm the sole engineer behind an AI-driven finance platform at Jabil, and I ship my own products on nights and weekends. This fall I start my M.S. in Computer Science (Machine Learning) at Georgia Tech. Outside the editor: bilingual EN/ES, a cyclist, and a former Google Developer Student Club Tech Lead who taught 500+ students.",
+    "Right now I'm the sole engineer behind an AI-driven finance platform at Jabil, and I build and ship my own products on the side. This fall I start my M.S. in Computer Science (Machine Learning) at Georgia Tech. Before that I led the Google Developer Student Club at USF, teaching 500+ students to ship real projects. Bilingual EN/ES, and a cyclist when I'm away from the editor.",
 };
 
 export type Service = { title: string; detail: string };
@@ -176,7 +176,7 @@ export const services = {
   kicker: "Work with me",
   heading: "I take on a few builds a year.",
   lead:
-    "Work I can take end to end — from the data layer to the interface.",
+    "One person, from the data layer to the screen — so nothing gets lost in handoffs.",
   items: [
     { title: "AI & LLM products", detail: "Agents, RAG, and the eval harnesses that keep them honest." },
     { title: "Full-stack web apps", detail: "Next.js and FastAPI — designed, built, and deployed." },

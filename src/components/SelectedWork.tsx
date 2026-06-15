@@ -22,9 +22,10 @@ function Row({ p, open, onToggle }: { p: Project; open: boolean; onToggle: () =>
         onClick={onToggle}
         aria-expanded={open}
         aria-controls={panelId}
+        aria-label={`${p.name}, ${p.role} — ${open ? "collapse" : "expand"} details`}
         className="group grid w-full grid-cols-[auto_1fr_auto] items-start gap-5 py-8 text-left sm:gap-8"
       >
-        <span className={`font-mono text-xs transition-colors ${open ? "text-copper" : "text-copper/70 group-hover:text-copper"}`}>
+        <span aria-hidden="true" className="font-mono text-xs text-copper transition-colors">
           {p.id}
         </span>
         <span>
@@ -53,6 +54,7 @@ function Row({ p, open, onToggle }: { p: Project; open: boolean; onToggle: () =>
 
       <div
         id={panelId}
+        inert={!open || undefined}
         className="grid transition-[grid-template-rows] duration-500 ease-out"
         style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
       >
@@ -90,7 +92,7 @@ export default function SelectedWork() {
       id="work"
       index="02"
       title="Selected Work"
-      intro="A few things I've designed and built — from a production AI legal platform to shipped products and client sites. Tap a project to expand."
+      intro="A few things I've designed and built — from a production AI legal platform to shipped products and client sites. Select a project to expand."
     >
       <div className="divide-y divide-line border-y border-line">
         {projects.map((p, i) => (

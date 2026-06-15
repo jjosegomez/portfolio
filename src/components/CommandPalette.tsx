@@ -11,7 +11,11 @@ export default function CommandPalette() {
   const [sel, setSel] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const close = useCallback(() => setOpen(false), []);
+  const lastFocused = useRef<HTMLElement | null>(null);
+  const close = useCallback(() => {
+    setOpen(false);
+    lastFocused.current?.focus?.();
+  }, []);
 
   const actions: Action[] = useMemo(
     () => [
@@ -37,14 +41,17 @@ export default function CommandPalette() {
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        setOpen((o) => !o);
+        setOpen((o) => {
+          if (!o) lastFocused.current = document.activeElement as HTMLElement;
+          return !o;
+        });
         setQ("");
         setSel(0);
-      } else if (e.key === "Escape") setOpen(false);
+      } else if (e.key === "Escape") close();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  }, [close]);
 
   useEffect(() => {
     if (open) setTimeout(() => inputRef.current?.focus(), 20);
@@ -65,6 +72,8 @@ export default function CommandPalette() {
         a.run();
         close();
       }
+    } else if (e.key === "Tab") {
+      e.preventDefault(); // trap focus inside the dialog
     }
   };
 
@@ -72,6 +81,7 @@ export default function CommandPalette() {
     <>
       <button
         onClick={() => {
+          lastFocused.current = document.activeElement as HTMLElement;
           setOpen(true);
           setQ("");
           setSel(0);

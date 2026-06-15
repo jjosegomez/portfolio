@@ -44,7 +44,7 @@ export default function ProjectForm() {
 
   if (status === "ok") {
     return (
-      <div className="mt-10 max-w-xl rounded-lg border border-line bg-surface p-6">
+      <div role="status" aria-live="polite" className="mt-10 max-w-xl rounded-lg border border-line bg-surface p-6">
         <p className="font-display text-lg font-bold tracking-tight">Got it — thanks.</p>
         <p className="mt-1 text-[14px] leading-relaxed text-muted">
           I read everything and reply to the ones I can help with. Talk soon.
@@ -80,7 +80,7 @@ export default function ProjectForm() {
           required
           rows={4}
           className={`${field} resize-y`}
-          placeholder="A sentence or two on the project, rough timeline, and budget if you have one."
+          placeholder="What you're building, rough timeline, and ballpark budget. A couple sentences is plenty."
         />
       </div>
 
@@ -88,7 +88,7 @@ export default function ProjectForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex items-center gap-2 rounded-md bg-copper px-5 py-3 font-mono text-xs uppercase tracking-wider text-oncopper transition-colors hover:bg-copper-strong disabled:opacity-60"
+          className="inline-flex min-h-[44px] items-center gap-2 rounded-md bg-copper px-5 py-3.5 font-mono text-xs uppercase tracking-wider text-oncopper transition-colors hover:bg-copper-strong disabled:opacity-60"
         >
           {status === "sending" ? "Sending…" : `${services.cta.label} →`}
         </button>
@@ -98,7 +98,7 @@ export default function ProjectForm() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-[11px] uppercase tracking-wider text-muted underline-offset-4 transition-colors hover:text-ink hover:underline"
+            className="inline-flex min-h-[44px] items-center font-mono text-[11px] uppercase tracking-wider text-muted underline-offset-4 transition-colors hover:text-ink hover:underline"
           >
             Rather talk? Grab a time →
           </a>
@@ -108,7 +108,7 @@ export default function ProjectForm() {
       </div>
 
       {status === "error" && (
-        <p className="mt-3 text-[13px] text-muted">
+        <p role="alert" className="mt-3 text-[13px] text-muted">
           Something went wrong — email{" "}
           <a href={`mailto:${profile.email}`} className="text-copper-strong underline underline-offset-2">
             {profile.email}

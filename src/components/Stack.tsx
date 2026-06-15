@@ -9,9 +9,9 @@ export default function Stack() {
       id="stack"
       index="01"
       title="Stack"
-      intro="What I build with — weighted toward agentic AI, full-stack delivery, and the data layer underneath."
+      intro="What I build with — agentic AI and full-stack delivery, on top of the data layer."
     >
-      <div className="marquee -mx-6 mb-12 border-y border-line py-3.5">
+      <div aria-hidden="true" className="marquee -mx-6 mb-12 border-y border-line py-3.5">
         <div className="marquee-track">
           {[...all, ...all].map((it, i) => (
             <span key={i} className="mx-5 font-mono text-xs uppercase tracking-[0.12em] text-muted">
