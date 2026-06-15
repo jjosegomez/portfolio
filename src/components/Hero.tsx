@@ -74,8 +74,8 @@ export default function Hero() {
             <a href="#work" className="rounded-md bg-copper px-5 py-3 font-mono text-xs uppercase tracking-wider text-oncopper transition-colors hover:bg-copper-strong">
               View work →
             </a>
-            <a href={profile.links.resume} className="rounded-md border border-line-strong px-5 py-3 font-mono text-xs uppercase tracking-wider text-ink transition-colors hover:border-ink">
-              Résumé
+            <a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer" className="rounded-md border border-line-strong px-5 py-3 font-mono text-xs uppercase tracking-wider text-ink transition-colors hover:border-ink">
+              LinkedIn
             </a>
             <a href={profile.links.github} target="_blank" rel="noopener noreferrer" className="rounded-md border border-line-strong px-5 py-3 font-mono text-xs uppercase tracking-wider text-ink transition-colors hover:border-ink">
               GitHub

@@ -24,6 +24,7 @@ export default function CommandPalette() {
         hint: "Section",
         run: () => document.querySelector(n.href)?.scrollIntoView({ behavior: "smooth" }),
       })),
+      { label: "Let's work together", hint: "Section", run: () => document.querySelector("#hire")?.scrollIntoView({ behavior: "smooth" }) },
       { label: "Download résumé", hint: "PDF", run: () => window.open(profile.links.resume, "_blank") },
       { label: "GitHub", hint: "External", run: () => window.open(profile.links.github, "_blank") },
       { label: "LinkedIn", hint: "External", run: () => window.open(profile.links.linkedin, "_blank") },

@@ -8,8 +8,7 @@ const TARGETS: [string, string][] = [
   ["work", "Work"],
   ["experience", "Experience"],
   ["about", "About"],
-  ["hire", "Work with me"],
-  ["contact", "Contact"],
+  ["hire", "Let's work together"],
 ];
 
 export default function ScrollProgress() {

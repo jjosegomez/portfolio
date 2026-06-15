@@ -173,7 +173,7 @@ export const about = {
 
 export type Service = { title: string; detail: string };
 export const services = {
-  kicker: "Work with me",
+  kicker: "Let's work together",
   heading: "I take on a few builds a year.",
   lead:
     "One person, from the data layer to the screen — so nothing gets lost in handoffs.",
@@ -192,6 +192,4 @@ export const nav = [
   { label: "Stack", href: "#stack" },
   { label: "Experience", href: "#experience" },
   { label: "About", href: "#about" },
-  { label: "Work with me", href: "#hire" },
-  { label: "Contact", href: "#contact" },
 ];

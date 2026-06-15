@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { nav, profile } from "@/data/content";
+import { nav } from "@/data/content";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,10 +34,10 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href={profile.links.resume}
+            href="#hire"
             className="rounded-md bg-copper px-3.5 py-2 font-mono text-xs uppercase tracking-wider text-oncopper transition-colors hover:bg-copper-strong"
           >
-            Résumé
+            Let&apos;s work together!
           </a>
         </nav>
 
@@ -69,10 +69,11 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href={profile.links.resume}
+              href="#hire"
+              onClick={() => setOpen(false)}
               className="mt-3 rounded-md bg-copper px-4 py-2.5 text-center font-mono text-xs uppercase tracking-wider text-oncopper"
             >
-              Résumé
+              Let&apos;s work together!
             </a>
           </div>
         </nav>

@@ -6,7 +6,7 @@ import Archive from "@/components/Archive";
 import Experience from "@/components/Experience";
 import About from "@/components/About";
 import WorkWithMe from "@/components/WorkWithMe";
-import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import RevealController from "@/components/RevealController";
 import ScrollProgress from "@/components/ScrollProgress";
 import CommandPalette from "@/components/CommandPalette";
@@ -32,8 +32,8 @@ export default function Home() {
         <Experience />
         <About />
         <WorkWithMe />
-        <Contact />
       </main>
+      <Footer />
       <RevealController />
       <CommandPalette />
     </>
