@@ -119,7 +119,7 @@ export const experience: Job[] = [
     location: "Tampa, FL",
     dates: "Apr 2025 — Present",
     bullets: [
-      "Sole architect & developer of Jabil Finance's first production AI agent (Snowflake Cortex) — 9 views, 8 semantic models, orchestration and an evaluation framework — serving 6 global analysts at 96% accuracy against SAP/Cognos source reports.",
+      "Architected and built Jabil Finance's first production AI agent (Snowflake Cortex) — 9 views, 8 semantic models, orchestration and an evaluation framework — serving 6 global analysts at 96% accuracy against SAP/Cognos source reports.",
       "Built an AI evaluation suite (53+ test cases) that gates every release against source-of-truth financial reports.",
       "Authored A.G.E.N.T., a repeatable playbook for deploying LLM agents — now consulting internally as other teams adopt agentic systems.",
       "Shipped three additional production/MVP apps concurrently: a Pillar II tax app (zero cutover incidents, 10,835-row migration), an AI File Manager (Claude Haiku via AWS Bedrock), and a Next.js/FastAPI finance platform.",
@@ -168,7 +168,7 @@ export const about = {
   lead:
     "I'm Juan — a Colombian-American software engineer in Tampa. I like building things end to end: the data underneath, the AI in the middle, and the interface people actually touch.",
   body:
-    "Right now I'm the sole engineer behind an AI-driven finance platform at Jabil, and I build and ship my own products on the side. This fall I start my M.S. in Computer Science (Machine Learning) at Georgia Tech. Before that I led the Google Developer Student Club at USF, teaching 500+ students to ship real projects. Bilingual EN/ES, and a cyclist when I'm away from the editor.",
+    "Right now I build the AI-driven finance platform at Jabil, and I ship my own products on the side. This fall I start my M.S. in Computer Science (Machine Learning) at Georgia Tech. Before that I led the Google Developer Student Club at USF, teaching 500+ students to ship real projects. Bilingual EN/ES, and a cyclist when I'm away from the editor.",
 };
 
 export type Service = { title: string; detail: string };
@@ -176,7 +176,7 @@ export const services = {
   kicker: "Let's work together",
   heading: "I take on a few builds a year.",
   lead:
-    "One person, from the data layer to the screen — so nothing gets lost in handoffs.",
+    "The data, the AI, and the interface — built to fit together, not bolted on.",
   items: [
     { title: "AI & LLM products", detail: "Agents, RAG, and the eval harnesses that keep them honest." },
     { title: "Full-stack web apps", detail: "Next.js and FastAPI — designed, built, and deployed." },

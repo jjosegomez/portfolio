@@ -64,7 +64,7 @@ export default function Hero() {
 
           <p className="rise d5 mt-6 max-w-lg text-[15px] leading-relaxed text-muted">
             I&apos;m a <span className="font-medium text-ink">Colombian-American engineer</span> in
-            Tampa. Sole engineer behind an{" "}
+            Tampa. I build an{" "}
             <span className="font-medium text-ink">AI-driven finance platform at Jabil</span> — and I
             ship my own products on the side.{" "}
             <span className="font-medium text-ink">M.S. CS @ Georgia Tech</span>, incoming.

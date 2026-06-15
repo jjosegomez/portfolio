@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://techbyjuan.com"),
   title: "Juan Gomez — Software Engineer",
   description:
-    "Software engineer in Tampa building full-stack apps, AI products, and the systems behind enterprise finance — sole engineer behind a Fortune-500 finance org's first production AI agent.",
+    "Software engineer in Tampa building full-stack apps, AI products, and the systems behind enterprise finance — the engineer behind a Fortune-500 finance org's first production AI agent.",
   openGraph: {
     title: "Juan Gomez — Software Engineer",
     description:
