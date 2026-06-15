@@ -11,9 +11,10 @@
   /* Hairlines tinted warm */
   --line: oklch(0.875 0.012 78);
   --line-strong: oklch(0.80 0.014 70);
-  /* Single warm copper accent (~10% usage) */
-  --copper: oklch(0.575 0.12 48);
-  --copper-strong: oklch(0.49 0.12 46);
+  /* Single warm copper accent (~10% usage) — darkened to clear WCAG AA
+     (copper text on paper + white-on-copper buttons both reach ~5:1) */
+  --copper: oklch(0.53 0.12 48);
+  --copper-strong: oklch(0.46 0.12 46);
   --oncopper: oklch(0.985 0.012 95);
 }
 
