@@ -117,7 +117,7 @@ main { position: relative; z-index: 1; }
 .glow {
   position: fixed; left: 0; top: 0; z-index: 0; pointer-events: none;
   width: 560px; height: 560px; border-radius: 50%;
-  background: radial-gradient(circle, oklch(0.72 0.13 50 / 0.10), transparent 62%);
+  background: radial-gradient(circle, oklch(0.64 0.15 48 / 0.20), transparent 70%);
   transform: translate3d(-50%, -50%, 0); will-change: transform; opacity: 0;
   transition: opacity 0.5s ease;
 }
