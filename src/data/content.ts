@@ -80,16 +80,16 @@ export const projects: Project[] = [
   },
   {
     id: "04",
-    name: "Vilar Safety",
+    name: "English Woods Publishing",
     role: "Design → Build → Deploy",
     blurb:
-      "Brand, marketing site, and a contact pipeline wired straight to the owner's inbox — for a safety-consulting business. Shipped on its own domain.",
-    tags: ["Next.js", "Tailwind", "Forms"],
-    url: "https://vilarsafetyconsulting.com",
+      "Marketing + book site for an author and independent publisher — fast, static, with built-in lead capture and a hosted store. Shipped on its own domain with a full DNS + SSL cutover.",
+    tags: ["HTML/CSS/JS", "Netlify", "Forms"],
+    url: "https://englishwoodspublishing.com",
     highlights: [
-      "Brand + responsive marketing site",
-      "Contact pipeline wired to email",
-      "Designed → built → deployed",
+      "Bold, brand-aligned responsive marketing site",
+      "Contact + newsletter capture via Netlify Forms",
+      "Designed → built → deployed; full DNS + SSL cutover",
     ],
   },
 ];
