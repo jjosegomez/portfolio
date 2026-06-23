@@ -1,9 +1,10 @@
 # CONTEXT — techbyjuan.com portfolio
 
-**Last session:** 2026-06-15
+**Last session:** 2026-06-22
 **Stack:** Next.js 16 (static export) + Tailwind v4 → Cloudflare Pages project `techbyjuan`
 
 ## Current state
+- **2026-06-22:** Selected Work **#04 swapped Vilar Safety → English Woods Publishing** (`src/data/content.ts`; accurate copy from the live project — static/Netlify/Forms, englishwoodspublishing.com). Built + deployed to CF Pages prod (`wrangler pages deploy out --project-name=techbyjuan --branch main`), verified live (HTTP 200, Vilar gone). Vilar left fully off (not archived). Commit `60db63c`.
 - **2026-06-15 (pivot):** repositioned from employer-portfolio → **"Let's work together"** client/brand front door. Removed the Contact section (06); the nav CTA ("Let's work together!") + hero drive to the lead-gen form. **Proof-first IA:** Hero → 01 Selected Work → Archive → 02 Experience → 03 Stack → 04 About → 05 Let's work together. AI-first hero tagline; **lone-developer framing removed site-wide** (no "sole/one person"). Full UX+copy expert review applied (UX A−/Copy B+) — a11y fixes (inert panels, ⌘K focus trap, skip link, 44px targets), WCAG-AA copper, stronger cursor glow. **Lead capture LIVE & tested:** Web3Forms inbox form (`ProjectForm.tsx`, public key) + `cal.com/techbyjuan` booking link — submission lands in Gmail, not spam.
 - Full redesign on branch **`feat/redesign-2026`** (committed): light/copper "engineering-paper" theme, résumé-grounded content, "Interactive System" motion — ⌘K command palette, scroll progress + section minimap, count-ups, kinetic hero (word reveal + copper underline draw + portrait parallax), View-Transition project expand, marquee Stack, cursor glow.
 - ✅ **LIVE on production**: https://techbyjuan.com (promoted 2026-06-15 via `wrangler ... --branch main`; verified HTTP 200, old build gone). `main` fast-forwarded to the redesign + pushed to origin. Preview alias: https://redesign-preview.techbyjuan.pages.dev
