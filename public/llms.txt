@@ -1,0 +1,47 @@
+# Juan Gomez — Software Engineer
+
+> AI-first, full-stack software engineer in Tampa, FL. I build products end to end — the data underneath, the AI in the middle, and the interface people actually touch. Currently building the AI-driven finance platform at Jabil, shipping my own products on the side, and starting an M.S. in Computer Science (Machine Learning) at Georgia Tech in Fall 2026.
+
+This is the personal site and portfolio of Juan Gomez (techbyjuan.com). Bilingual EN/ES. Permanent US Resident — no sponsorship required. Available for one or two new projects a year.
+
+- Email: hi@techbyjuan.com
+- GitHub: https://github.com/jjosegomez
+- LinkedIn: https://www.linkedin.com/in/jjgomezswe/
+- Résumé: https://techbyjuan.com/Juan_Gomez_Resume.pdf
+
+## Selected work
+
+- [Trinity](https://techbyjuan.com): Founding engineer of a production multi-agent AI legal co-pilot for law firms. Architected end to end — case intake & classification, RAG over Colombian jurisprudence, and grounded legal drafting under a strict propose-then-approve human-in-the-loop, with an LLM evaluation harness gating every retrieval and prompt change. Live with pilot firms. Stack: Next.js, TypeScript, Python, LLMs, RAG, multi-agent.
+- [Mia Fit](https://miafit-store.netlify.app): Custom Next.js storefront on a headless commerce backend — full catalog, variants, and cart. Designed, built, and deployed end to end with real products and real checkout in production. Stack: Next.js, TypeScript, Tailwind, headless commerce.
+- [Memex](https://getmemex.dev): Open-source npm package giving AI agents persistent, encrypted long-term memory, shipping with an MCP server for plug-and-play use in Claude, ChatGPT, and other LLM tools. Stack: TypeScript, Node.js, npm, MCP.
+- [English Woods Publishing](https://englishwoodspublishing.com): Marketing + book site for an independent author and publisher — fast static site with built-in lead capture and a hosted store, shipped on its own domain with a full DNS + SSL cutover. Stack: HTML/CSS/JS, Netlify, Forms.
+
+## Experience
+
+- Jabil — Financial Systems Developer II, Tampa FL (Apr 2025 – Present): Architected and built Jabil Finance's first production AI agent (Snowflake Cortex) — 9 views, 8 semantic models, orchestration, and an evaluation framework — serving 6 global analysts at 96% accuracy against SAP/Cognos source reports. Built a 53+ case AI evaluation suite gating every release, authored A.G.E.N.T. (an internal LLM-agent deployment playbook), and shipped three additional production/MVP apps concurrently (Pillar II tax app, AI File Manager on AWS Bedrock, a Next.js/FastAPI finance platform). Owns end-to-end delivery: release checklists, credential rotation, rollback criteria, row-level access — Okta, Docker, Azure CI/CD.
+- Medtronic — Software Engineer I, Minneapolis MN (Mar 2024 – Apr 2025): Built full-stack apps and manufacturing-equipment integrations (Python, Ignition, SECS/GEM), a custom OPC UA device module in Java (Ignition SDK), and a SQL Server normalization redesign — led Validation Plans to FDA/Medtronic quality standards.
+- Google Developer Student Club (USF) — Tech Lead, Tampa FL (2023 – 2024): Led the chapter; delivered 10+ technical workshops to 500+ students and mentored 10+ on personal projects.
+- Eversana Intouch — Software Development Intern, Kansas City KS (Jun – Aug 2023): Redesigned live client sites for responsiveness and accessibility; built a React + Node.js app that lifted traffic and retention.
+
+## Stack
+
+- Languages: SQL, Python, TypeScript, JavaScript, Java, C#, C++
+- Agentic AI / LLM: Snowflake Cortex, AWS Bedrock, Claude, OpenAI, agent orchestration, RAG, prompt & context design, eval frameworks, DeepEval
+- AI-assisted dev: Claude Code, Cursor, GitHub Copilot, Kiro
+- Frameworks & cloud: Next.js, FastAPI, Streamlit, React, Node.js, Supabase / PostgreSQL, Snowflake, AWS, Azure, Docker, Okta
+- Quality & delivery: Playwright, Vitest, AI eval suites, release validation, row-level access, Agile / Scrum, Git
+
+## Education
+
+- Georgia Institute of Technology — M.S. Computer Science (OMSCS), Machine Learning — starting Fall 2026
+- University of South Florida — B.S. Computer Science, 2020–2023, GPA 3.49
+
+## Work with me
+
+I take on a few builds a year — the data, the AI, and the interface, built to fit together rather than bolted on:
+- AI & LLM products: agents, RAG, and the eval harnesses that keep them honest
+- Full-stack web apps: Next.js and FastAPI — designed, built, and deployed
+- Finance & data systems: pipelines, dashboards, and reporting you can trust — Snowflake / SQL
+- 0 → 1 MVPs: from a rough idea to a deployed product real users can touch
+
+Start a project: hi@techbyjuan.com
