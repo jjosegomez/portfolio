@@ -44,6 +44,27 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Juan Gomez",
+  url: "https://techbyjuan.com",
+  image: "https://techbyjuan.com/images/portrait.jpg",
+  jobTitle: "Software Engineer",
+  description:
+    "Software engineer in Tampa building full-stack apps, AI products, and the systems behind enterprise finance.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Tampa",
+    addressRegion: "FL",
+    addressCountry: "US",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/jjgomezswe/",
+    "https://github.com/jjosegomez",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -52,6 +73,12 @@ export default function RootLayout({
       <body
         className={`${display.variable} ${body.variable} ${mono.variable} antialiased grain`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         {children}
       </body>
     </html>
