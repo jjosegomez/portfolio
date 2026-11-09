@@ -59,7 +59,7 @@ Juan's personal-brand site, **https://techbyjuan.com**. Since 2026-06-15 a "Let'
 - **No client/firm names** for Trinity; keep Vico OFF the site. Vilar Safety removed from Selected Work (2026-06-22) — don't re-add.
 - No fabricated metrics or claims — content is grounded in `public/Juan_Gomez_Resume.pdf`.
 - Don't deploy via Netlify. Verify prod after deploy (HTTP 200 on techbyjuan.com).
-- Never commit secrets; the Cal.com and `cfat_` Cloudflare tokens pasted in chat are pending rotation.
+- Never commit secrets. This repo is PUBLIC: never write credential status or security TODOs here; keep them in private memory.
 
 ---
 *Project CLAUDE.md — keep updated as the project evolves. Last updated: 2026-11-09*
